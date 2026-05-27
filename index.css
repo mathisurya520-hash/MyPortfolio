@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #faf7f2;
+  --color-obsidian-light: #ffffff;
+  --color-amethyst: #ec4899;
+  --color-amethyst-light: #f472b6;
+  --color-mint: #0d9488;
+  --color-mint-light: #2dd4bf;
+  
+  --font-sans: 'Satoshi', 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; filter: blur(80px); }
+  50% { opacity: 0.3; filter: blur(100px); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Global Reset & Scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: #faf7f2;
+  color: #2d2722;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #faf7f2;
+}
+
+/* Frosted Glassmorphism Styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px -15px rgba(236, 72, 153, 0.06);
+  transform: translateY(-4px);
+}
+
+/* Specific glows - clean pink/teal glows */
+.glow-card-mint:hover {
+  box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.08);
+  border-color: rgba(13, 148, 136, 0.15);
+}
+
+.glow-card-amethyst:hover {
+  box-shadow: 0 10px 30px -15px rgba(236, 72, 153, 0.08);
+  border-color: rgba(236, 72, 153, 0.15);
+}
+
+/* Custom Gradients - Pink to Teal luxury style */
+.text-gradient-purple-teal {
+  background: linear-gradient(135deg, #ec4899 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mint {
+  background: linear-gradient(135deg, #0d9488 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hide Default Tailwind outline */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* Hide root styles that Vite might inject to center things */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  max-width: none;
+  min-height: 100vh;
+  display: block;
+}
